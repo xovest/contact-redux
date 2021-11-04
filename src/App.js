@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* /add /edit/:id */}
+      <ToastContainer />
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<h1>Contact Book</h1>} />
+
+        <Route path="/add" element={<h1>add component</h1>} />
+        
+        <Route path="/edit/:id" element={<h1>edit component with id</h1>} />
+      </Routes>
     </div>
   );
 }
