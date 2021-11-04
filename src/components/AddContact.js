@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -9,8 +9,8 @@ const AddContact = () => {
   const [number, setNumber] = useState('');
 
   const contacts = useSelector(state => state);
+  
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
