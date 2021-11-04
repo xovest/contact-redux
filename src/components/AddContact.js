@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AddContact = () => {
@@ -10,7 +11,7 @@ const AddContact = () => {
   const contacts = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const histroy = 0;
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +40,7 @@ const AddContact = () => {
 
     dispatch({type: 'ADD_CONTACT', payload: data});
     toast.success('Ppl added!');
-    histroy.push('/');
+    navigate('/');
   };
 
   return (
