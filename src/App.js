@@ -2,6 +2,9 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
+import AddContact from './components/AddContact';
+import EditContact from './components/EditContact';
 
 const App = () => {
   return (
@@ -10,11 +13,11 @@ const App = () => {
       <ToastContainer />
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<h1>Contact Book</h1>} />
+        <Route exact path="/" element={<Home />} />
 
-        <Route path="/add" element={<h1>add component</h1>} />
+        <Route path="/add" element={<AddContact />} />
         
-        <Route path="/edit/:id" element={<h1>edit component with id</h1>} />
+        <Route path="/edit/:id" element={<EditContact />} />
       </Routes>
     </div>
   );
