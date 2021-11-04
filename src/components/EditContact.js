@@ -1,14 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 
 const EditContact = () => {
   const { id } = useParams();
+  const contacts = useSelector(state => state[id]);
+
+  console.log(contacts);
 
   return (
     <div className="container">
-        <h1 className="display-3 my-5 text-center">
-          Edit Ppl {id}
-        </h1>
+      <h1 className="display-3 my-5 text-center">Editing {contacts.name}</h1>
       <div className="row">
         <div className="col-md-6 shadow mx-auto p-5">
           <form>
